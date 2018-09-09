@@ -1,0 +1,10 @@
+<!--par défaut, on donne la class list-group-item dont on change la couleurs celons la valeur de loveIts-->
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': post.loveIts > 0,
+                'list-group-item-danger': post.loveIts < 0}">
+  <h4>{{ post.title }} -- {{ post.created_at | date: 'short' }}</h4>
+  <p>{{ post.content }}</p>
+  <p>{{ post.loveIts }}</p>
+  <button class="btn btn-success" (click)="onUp()">Love It !</button>
+  <button class="btn btn-danger" (click)="onDown()">Don't Love It</button>
+</li>
